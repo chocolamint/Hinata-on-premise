@@ -54,13 +54,10 @@
     </div>
     <div class="comment-area">
         @Html.Partial("_CommentList", Model.Comments)
-        <div class="comment-editor-area">
-            @if (ViewBag.LogonUser != null && ViewBag.LogonUser.Name != null)
-            {
-                <hr />
-                @Html.Partial("_CommentEdit", Model.NewComment)
-            }
-        </div>
+        @if (ViewBag.LogonUser != null && ViewBag.LogonUser.Name != null)
+        {
+            @Html.Partial("_CommentEdit", Model.NewComment)
+        }
     </div>
 </div>
 <div class="modal fade" id="deleteModel" tabindex="-1" role="dialog">

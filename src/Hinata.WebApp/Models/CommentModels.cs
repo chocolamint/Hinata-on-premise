@@ -39,4 +39,11 @@ namespace Hinata.Models
 
         public string CommentHtmlBody { get; set; }
     }
+
+    public class CommentSavedReturnModel
+    {
+        public CommentViewModel ViewModel { get; set; }
+
+        public CommentEditModel EditModel { get; set; }
+    }
 }

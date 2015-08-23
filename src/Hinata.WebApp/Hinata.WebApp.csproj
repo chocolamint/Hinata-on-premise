@@ -331,6 +331,8 @@
     <Content Include="Views\User\Update.cshtml" />
     <Content Include="Views\Item\_CommentList.cshtml" />
     <Content Include="Views\Item\_CommentEdit.cshtml" />
+    <Content Include="Views\Item\_CommentView.cshtml" />
+    <Content Include="Views\Item\_CommentSavedReturnView.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

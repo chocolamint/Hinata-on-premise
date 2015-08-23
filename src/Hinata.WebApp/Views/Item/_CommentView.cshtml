@@ -1,0 +1,14 @@
+﻿@model CommentViewModel
+<hr />
+<div id="@Model.CommentId" class="comment-content">
+    <div class="comment-user">
+        <div>
+            <a href="@Url.Action("Index", "User", new {name = @Model.CommentUserName})"><img src="@Url.Content(Model.CommentUserIconUrl)" alt="@Model.CommentUserName" class="icon-image" /></a>
+            @Html.ActionLink(Model.CommentUserDisplayName, "Index", "User", new { name = @Model.CommentUserName }, null)&nbsp;
+            @Model.CommentLastModifiedDateTime.ToString("yyyy/MM/dd HH:mm:ss")
+        </div>
+    </div>
+    <div class="item-viewer">
+        @Html.Raw(Model.CommentHtmlBody)
+    </div>
+</div>

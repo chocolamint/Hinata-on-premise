@@ -63,4 +63,21 @@ $(function() {
             }
         }
     });
+
+    $(document).on("click", "#btnCommentSubmit", function() {
+        var $form = $("#commentForm");
+        var data = $form.serialize();
+
+        $.ajax({
+            type: "POST",
+            url: $form.attr("action"),
+            dataType: "html",
+            data: data,
+            cache: false,
+            success: function(html) {
+                $("div.comment-editor-area").remove();
+                $("div.comment-area").append(html);
+            }
+        });
+    });
 });

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using AutoMapper;
 using Hinata.Data.Commands;
+using Hinata.Filters;
 using Hinata.Models;
 using Hinata.Web.Mvc;
 
@@ -143,6 +144,7 @@ namespace Hinata.Controllers
             return RedirectToAction("Index", "Item");
         }
 
+        [NoCache]
         [ValidateAntiForgeryToken]
         [Route("item/{id}/savecomment")]
         [HttpPost]
@@ -166,7 +168,13 @@ namespace Hinata.Controllers
 
             await _commentDbCommand.SaveAsync(comment);
 
-            return RedirectToAction("Item", new {id = model.ItemId});
+            var returnModel = new CommentSavedReturnModel
+            {
+                ViewModel = Mapper.Map<CommentViewModel>(comment),
+                EditModel = (LogonUser == null) ? new CommentEditModel() : Mapper.Map<CommentEditModel>(item.NewComment(LogonUser)),
+            };
+
+            return PartialView("_CommentSavedReturnView", returnModel);
         }
     }
 }
