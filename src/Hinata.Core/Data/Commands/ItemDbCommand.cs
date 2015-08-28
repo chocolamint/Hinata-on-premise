@@ -326,7 +326,7 @@ INSERT INTO [dbo].[ItemTagRevisions] (
                     {
                         await cn.ExecuteAsync(sqlDraft, new ItemRegisterDataModel(item), tr).ConfigureAwait(false);
                         var orderNo = 1;
-                        foreach (var tag in item.Tags)
+                        foreach (var tag in item.ItemTags)
                         {
                             await cn.ExecuteAsync(sqlTags, new { ItemId = item.Id, item.RevisionNo ,tag.Name, tag.Version, OrderNo = orderNo }, tr).ConfigureAwait(false);
                             orderNo++;

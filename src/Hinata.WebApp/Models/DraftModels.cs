@@ -82,25 +82,25 @@ namespace Hinata.Models
             return validationResults;
         }
 
-        public IEnumerable<Tag> CreateTagCollectionFromInlineText()
+        public IEnumerable<ItemTag> CreateTagCollectionFromInlineText()
         {
-            if (string.IsNullOrWhiteSpace(TagInlineString)) return new Tag[0];
+            if (string.IsNullOrWhiteSpace(TagInlineString)) return new ItemTag[0];
             return TagInlineString.Split(' ').Select(CreateTagFromText).Where(tag => tag != null);
         }
 
-        private static Tag CreateTagFromText(string text)
+        private static ItemTag CreateTagFromText(string text)
         {
             if (string.IsNullOrWhiteSpace(text)) return null;
 
             var regex = new Regex(@"\[(.+?)\]");
             if (!regex.IsMatch(text))
             {
-                return new Tag(text.Trim(), null);
+                return new ItemTag(text.Trim(), null);
             }
             var match = regex.Match(text);
             var name = text.Replace(match.Groups[0].Value, "").Trim();
             var version = match.Groups[1].Value.Trim();
-            return string.IsNullOrWhiteSpace(name) ? null : new Tag(name, version);
+            return string.IsNullOrWhiteSpace(name) ? null : new ItemTag(name, version);
         }
     }
 
@@ -120,11 +120,11 @@ namespace Hinata.Models
 
         public string Html { get; set; }
 
-        public TagCollection Tags { get; set; }
+        public ItemTagCollection ItemTags { get; set; }
 
         public DraftPreviewModel()
         {
-            Tags = new TagCollection();
+            ItemTags = new ItemTagCollection();
         }
     }
 }
