@@ -3,5 +3,5 @@
 @foreach (var tag in Model)
 {
     var tagversion = string.IsNullOrWhiteSpace(tag.Version) ? tag.Name : string.Format("{0}[{1}]", tag.Name, tag.Version);
-    <span>@tagversion</span>
+    <span>@tag.Version</span>
 }

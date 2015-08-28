@@ -24,7 +24,7 @@
             <ul class="item-box-tag-list">
                 @foreach (var tag in item.ItemTags)
                 {
-                    <li class="tag">@tag.Name</li>
+                    <li class="tag"><a href="@Url.Action("ItemList","Tag", new {name = tag.Name})">@tag.Name</a></li>
                 }
             </ul>
         </div>
