@@ -49,6 +49,7 @@ namespace Hinata.Models
         [ReadOnly(true)]
         public string Html { get; set; }
 
+        [Display(Name = "タグ")]
         [PlaceHolder("タグをスペース区切りで入力　例）T-SQL SQLServer[2012]")]
         public string TagInlineString { get; set; }
 
@@ -70,12 +71,30 @@ namespace Hinata.Models
 
             if (!string.IsNullOrWhiteSpace(TagInlineString))
             {
-                var tagNames = CreateTagCollectionFromInlineText().Select(x => x.Name).ToArray();
+                var tags = CreateTagCollectionFromInlineText().ToArray();
+                var tagNames = tags.Select(x => x.Name).ToArray();
                 var cnt = tagNames.Count();
                 var distinctCnt = tagNames.Distinct().Count();
                 if (cnt != distinctCnt)
                 {
                     validationResults.Add(new ValidationResult("重複しているタグがあります。", new[] { "TagInlineString" }));
+                }
+
+                var regex = new Regex(@"^[\<\>\&\""\'\/\*]$", RegexOptions.Compiled);
+
+                if (tagNames.Any(name => regex.IsMatch(name)))
+                {
+                    validationResults.Add(new ValidationResult("使用できない文字を使ったタグが存在します。", new[] { "TagInlineString" }));
+                }
+
+                if (tags.Any(x => x.Name.Length > 32))
+                {
+                    validationResults.Add(new ValidationResult("一つのタグの長さはは最大32文字までです。", new[] { "TagInlineString" }));
+                }
+
+                if (tags.Where(x => x.Version != null).Any(x => x.Version.Length > 16))
+                {
+                    validationResults.Add(new ValidationResult("一つのタグ・バージョンの長さはは最大16文字までです。", new[] { "TagInlineString" }));
                 }
             }
 
