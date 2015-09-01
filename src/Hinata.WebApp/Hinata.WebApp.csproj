@@ -155,10 +155,10 @@
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="Filters\AccessLogFilter.cs" />
+    <Compile Include="Filters\AccessLogFilterAttribute.cs" />
     <Compile Include="Filters\GlobalHandleErrorAttribute.cs" />
     <Compile Include="Filters\NoCacheAttribute.cs" />
-    <Compile Include="Filters\TraceLogFilter.cs" />
+    <Compile Include="Filters\TraceLogFilterAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
