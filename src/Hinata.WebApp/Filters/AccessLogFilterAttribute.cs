@@ -3,7 +3,7 @@ using Hinata.Logging;
 
 namespace Hinata.Filters
 {
-    public class AccessLogFilterAttribute  : ActionFilterAttribute
+    public class AccessLogFilterAttribute : ActionFilterAttribute
     {
         private readonly IAccessLogger _webAccessLogger = LogManager.GetWebAccessLogger();
 

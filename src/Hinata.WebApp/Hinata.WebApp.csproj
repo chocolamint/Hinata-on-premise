@@ -155,7 +155,7 @@
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="Filters\AccessLogFilterAttribute_.cs" />
+    <Compile Include="Filters\AccessLogFilterAttribute.cs" />
     <Compile Include="Filters\GlobalHandleErrorAttribute.cs" />
     <Compile Include="Filters\NoCacheAttribute.cs" />
     <Compile Include="Filters\TraceLogFilterAttribute.cs" />
