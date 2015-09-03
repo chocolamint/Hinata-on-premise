@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{523AC900-F961-4C9A-82BF-02BCDC25DC6A}"
 EndProject
@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{68A4DBBC-E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hinata.Data.Test", "Test\Hinata.Data.Test\Hinata.Data.Test.csproj", "{CC8F5242-91C1-4869-8CD7-AE6C0C811956}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hinata.WebApp", "src\Hinata.WebApp\Hinata.WebApp.csproj", "{29F74534-FB17-4BF8-BD3A-0F69532D759E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hinata.WebApp_", "src\Hinata.WebApp\Hinata.WebApp_.csproj", "{29F74534-FB17-4BF8-BD3A-0F69532D759E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hinata.Markdown.Test", "test\Hinata.Markdown.Test\Hinata.Markdown.Test.csproj", "{9C7E416F-9BF4-477B-9869-F50DAB9D8546}"
 EndProject
