@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace Hinata.Filters
 {
-    public class TraceLogFilterAttribute : ActionFilterAttribute
+    public class TraceLogFilterAttribute  : ActionFilterAttribute
     {
         private readonly ITraceLogger _traceLogger = LogManager.GetTraceLogger("APP");
 
