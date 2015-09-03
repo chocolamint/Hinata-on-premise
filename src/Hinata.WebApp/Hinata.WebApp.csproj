@@ -158,7 +158,7 @@
     <Compile Include="Filters\AccessLogFilterAttribute.cs" />
     <Compile Include="Filters\GlobalHandleErrorAttribute.cs" />
     <Compile Include="Filters\NoCacheAttribute.cs" />
-    <Compile Include="Filters\TraceLogFilterAttribute_.cs" />
+    <Compile Include="Filters\TraceLogFilterAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
